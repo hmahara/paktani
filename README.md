@@ -1,2 +1,4 @@
 # paktani
-Agriculture application concern
+Agriculture application concern.
+
+Collection of information and service those are usefull for agriculture
