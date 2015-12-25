@@ -1,5 +1,5 @@
 # paktani
-Agriculture application concern.
+Agriculture information system for indonesia.
 
-Collection of information and services those are usefull for agriculture.
+
 
