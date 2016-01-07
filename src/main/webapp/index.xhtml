@@ -21,7 +21,7 @@
  					<p:ajax event="overlaySelect" listener="#{infoWindowView.onMarkerSelect}" />	
  					<p:gmapInfoWindow id="infoWindow">
  						<p:outputPanel style="text-align: center; display: block; margin: auto">
- 							
+ 							<!-- 
  							<p:dataTable value="#{infoWindowView.production}" var="p">
  								<p:column headerText="Product name">
  									<p:outputLabel value="#{p.productName}"></p:outputLabel>
@@ -33,6 +33,40 @@
  									<p:outputLabel value="#{p.quantityPerUnit}"></p:outputLabel>
  								</p:column>
  							</p:dataTable>
+ 							-->
+ 							<!-- 
+ 							<p:tree value="#{infoWindowView.root}" var="node" orientation="vertical">
+						        <p:treeNode>
+						            <h:outputText value="#{node}" />
+						        </p:treeNode>
+						    </p:tree>
+						     -->
+						     <p:tabView >
+        						<p:tab title="Jagung">
+						     	<h3>Jagung</h3>
+						     <p:treeTable selectionMode="multiple" value="#{infoWindowView.root1}" var="node" orientation="horizontal">
+						        <p:column headerText="Name">
+            						<h:outputText value="#{node.location.locationName}" />
+        						</p:column>
+        						<p:column headerText="Level">
+            						<h:outputText value="#{node.location.locationLevelString}" />
+        						</p:column>
+        						<!-- 
+        						<p:column headerText="Product name">
+            						<h:outputText value="#{node.productVolume.product.productName}" />
+        						</p:column>
+        						 -->
+        						<p:column headerText="Quantity">
+            						<h:outputText value="#{node.productVolume.quantity}" />
+        						</p:column>
+        						 
+						    </p:treeTable>
+						    </p:tab>
+						    <p:tab title="Singkong">
+						    	<h3>Singkong</h3>
+						    	<p:outputLabel value="Data singkong"/>
+						    </p:tab>
+						   </p:tabView>
  						</p:outputPanel>
  					</p:gmapInfoWindow>
  				</p:gmap>

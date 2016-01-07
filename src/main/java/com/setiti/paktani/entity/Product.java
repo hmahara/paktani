@@ -11,6 +11,15 @@ public class Product implements Serializable {
 	private String productName;
 	private String productCategory;
 	private double quantityPerUnit;
+	
+	public Product(String productName, String productCategory) {
+		super();
+		this.productName = productName;
+		this.productCategory = productCategory;
+	}
+	public Product() {
+		
+	}
 	public String getProductName() {
 		return productName;
 	}

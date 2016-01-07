@@ -10,6 +10,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.map.MarkerDragEvent;
+import org.primefaces.model.DefaultTreeNode;
+import org.primefaces.model.TreeNode;
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
@@ -22,7 +24,8 @@ public class Geographics implements Serializable{
 	private MapModel draggableModel;
     
     private Marker marker;
-     
+    
+    
     @PostConstruct
     public void init() {
         draggableModel = new DefaultMapModel();
@@ -42,9 +45,12 @@ public class Geographics implements Serializable{
         for(Marker premarker : draggableModel.getMarkers()) {
             premarker.setDraggable(true);
         }
+        
     }
-      
-    public MapModel getDraggableModel() {
+    
+    
+
+	public MapModel getDraggableModel() {
         return draggableModel;
     }
       
