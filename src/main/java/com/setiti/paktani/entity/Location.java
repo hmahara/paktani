@@ -5,6 +5,7 @@ public class Location {
 	private int locationLevel;
 	private String locationLevelString;
 	private Location parentLocation;
+	private String parentLocationId;
 	public String getLocationName() {
 		return locationName;
 	}
@@ -28,6 +29,12 @@ public class Location {
 	}
 	public void setLocationLevelString(String locationLevelString) {
 		this.locationLevelString = locationLevelString;
+	}
+	public String getParentLocationId() {
+		return parentLocationId;
+	}
+	public void setParentLocationId(String parentLocationId) {
+		this.parentLocationId = parentLocationId;
 	}
 	
 	
