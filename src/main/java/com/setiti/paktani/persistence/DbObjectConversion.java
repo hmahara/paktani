@@ -1,5 +1,7 @@
 package com.setiti.paktani.persistence;
 
+import org.bson.Document;
+
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBObject;
 import com.setiti.paktani.entity.Location;
@@ -12,7 +14,16 @@ public class DbObjectConversion {
 		docBuilder.append("_id", location.getLocationName());
 		docBuilder.append("name", location.getLocationName());
 		docBuilder.append("location_level", location.getLocationLevel());
-		docBuilder.append("parent_location", location.getPare);
+		docBuilder.append("parent_location", location.getParentLocationId());
 		return docBuilder.get();
+	}
+	
+	public static Document createDocument(Location location){
+		Document doc = new Document("location", new Document()
+		.append("_id", location.getLocationName())
+		.append("name", location.getLocationName())
+		.append("location_level", location.getLocationLevel())
+		.append("parent_location", location.getParentLocationId()));
+		return doc;
 	}
 }
