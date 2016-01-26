@@ -26,4 +26,15 @@ public class DbObjectConversion {
 		.append("parent_location", location.getParentLocationId()));
 		return doc;
 	}
+	
+	public static Document createDocument(Location location, String latitude, String longitude){
+		Document doc = new Document("location", new Document()
+		.append("_id", location.getLocationName())
+		.append("name", location.getLocationName())
+		.append("location_level", location.getLocationLevel())
+		.append("latitude", latitude)
+		.append("longitude", longitude)
+		.append("parent_location", location.getParentLocationId()));
+		return doc;
+	}
 }
