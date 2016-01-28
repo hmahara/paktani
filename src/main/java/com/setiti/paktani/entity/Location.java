@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Location {
 	@Id
-	private long locationId;
+	private String locationId;
 	private String locationName;
 	private int locationLevel;
 	private String locationLevelString;
@@ -17,13 +17,14 @@ public class Location {
 	
 	private String latitude;
 	private String longitude;
+	private String locationType;
 	
 	
 	public Location() {
 	}
 
 	@PersistenceConstructor
-	public Location(long locationId, String locationName, int locationLevel, String locationLevelString,
+	public Location(String locationId, String locationName, int locationLevel, String locationLevelString,
 			String parentLocationId) {
 		super();
 		this.locationId = locationId;
@@ -33,7 +34,7 @@ public class Location {
 		this.parentLocationId = parentLocationId;
 	}
 	
-	public Location(long locationId, String locationName, int locationLevel, String locationLevelString,
+	public Location(String locationId, String locationName, int locationLevel, String locationLevelString,
 			String parentLocationId, String latitude, String longitude) {
 		super();
 		this.locationId = locationId;
@@ -75,10 +76,10 @@ public class Location {
 	public void setParentLocationId(String parentLocationId) {
 		this.parentLocationId = parentLocationId;
 	}
-	public long getLocationId() {
+	public String getLocationId() {
 		return locationId;
 	}
-	public void setLocationId(long locationId) {
+	public void setLocationId(String locationId) {
 		this.locationId = locationId;
 	}
 	public String getLatitude() {
@@ -92,6 +93,14 @@ public class Location {
 	}
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
+	}
+
+	public String getLocationType() {
+		return locationType;
+	}
+
+	public void setLocationType(String locationType) {
+		this.locationType = locationType;
 	}
 	
 	
